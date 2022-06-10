@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="img/logo.jpg" alt="TinDev" width="120">
+  <img src="https://avatars.githubusercontent.com/u/34238744?v=4" alt="TinDev" width="120">
 <br>
 <br>
 NetMoveis
