@@ -25,8 +25,8 @@ namespace Telamoveis
 
             builder.Services.AddRefitClient<IGuestData>().ConfigureHttpClient(c =>
             {
-                c.BaseAddress = new Uri("https://62a1f3cbcd2e8da9b0ff6b9f.mockapi.io/IMOVEL/");
-               // c.BaseAddress = new Uri("https://localhost:44387/");
+               // c.BaseAddress = new Uri("https://62a1f3cbcd2e8da9b0ff6b9f.mockapi.io/IMOVEL/");
+                c.BaseAddress = new Uri("https://localhost:44387/");
 
             });
 
