@@ -1,7 +1,28 @@
 ﻿@page "/"
+@inject IGuestData GuestData
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
+@if(data is not null)
+{
+    <ul>
+        @foreach(var item in data)
+        {
+            <li>@item.TIPO_DO_MOVEL</li>
+            <li>@item.ID</li>
+            <li>@item.ENDERECO</li>
+            <li>@item.ESTADO</li>
+            <li>@item.ESTADO</li>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+        }
+    </ul>
+}
+
+
+@code {
+    private List<GuestModel> data;
+
+    protected override async Task OnInitializedAsync()
+    {
+        data = await GuestData.GetGuests();
+    }
+}

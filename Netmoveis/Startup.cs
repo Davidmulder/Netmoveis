@@ -28,6 +28,15 @@ namespace Netmoveis
         {
 
             services.AddControllers();
+            services.AddCors(policy =>
+            {
+                policy.AddPolicy("OpenCorsPolicy", opt =>               
+                    opt.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod());
+                
+
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Netmoveis", Version = "v1" });
@@ -45,6 +54,7 @@ namespace Netmoveis
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("OpenCorsPolicy");
 
             app.UseRouting();
 
